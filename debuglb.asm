@@ -92,6 +92,7 @@ DB_MSGN
 
 ; Print test routine to be executed
 DB_TSTN
+ RTS ;;; quiet
  STA VTMP
  RSAVE
  PRINT TNMSG
@@ -104,6 +105,7 @@ DB_TSTN
 
 ; Print action routine to be executed
 DB_ACTN
+ AND #$7F
  STA VTMP
  RSAVE
  PRINT ANMSG
@@ -116,6 +118,7 @@ DB_ACTN
 
 ; Print out info from testing SF bits
 DB_TSTSF
+ RTS ;;; quiet
  RSAVE
  PRINT TSFMSG
  LDA SF
@@ -131,6 +134,7 @@ DB_TSTSF
 
 ; Print out state of F1 and F2 flags
 DB_PF12
+ RTS ;;; quiet
  RSAVE
  PRINT PFMSG
  LDA F1
@@ -145,6 +149,7 @@ DB_PF12
 
 ; Print out matching rule number (daemons and player command)
 DB_VMAT
+ RTS ;;; quiet
  RSAVE
  PRINT VMMSG
  SEC
